@@ -1,0 +1,2235 @@
+<?xml version = "1.0" encoding="Windows-1252" standalone="yes"?>
+<VFPData>
+	<xsd:schema id="VFPData" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="VFPData" msdata:lsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="datos_frx2xml">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="f1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f7">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f8">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f9">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f10">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f11">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f12">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f13">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f14">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f15">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f16">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f17">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f18">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f19">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f20">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f21">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f22">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f23">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f24">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f25">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f26">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f27">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f28">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f29">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f30">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f31">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f32">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f33">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f34">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f35">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f36">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f37">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f38">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f39">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f40">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f41">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f42">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f43">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f44">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f45">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f46">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f47">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f48">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f49">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f50">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f51">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f52">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f53">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f54">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f55">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f56">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f57">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f58">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f59">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="f60">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<datos_frx2xml>
+		<f1>04/09/2015</f1>
+		<f2>Página 1</f2>
+		<f3>Desde 03/08/2015 hasta 31/08/2015</f3>
+		<f4>Empresa : Ronava Obrero</f4>
+		<f5>Dept. : Empaque</f5>
+		<f6>3625129    - RENGIFO, ROSALIA</f6>
+		<f7>Lunes 03/08/2015</f7>
+		<f8>08:00</f8>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:52</f12>
+		<f13>12:00</f13>
+		<f14>12:59</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Martes 04/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:58</f12>
+		<f13>12:00</f13>
+		<f14>12:58</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Miercoles 05/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10/>
+		<f11/>
+		<f12>07:43</f12>
+		<f13>12:00</f13>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19>0,50</f19>
+		<f20>  4:00</f20>
+		<f21/>
+		<f22>Dia NO trabajado</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Jueves 06/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:56</f12>
+		<f13>12:01</f13>
+		<f14>13:00</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Viernes 07/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:58</f12>
+		<f13>12:02</f13>
+		<f14>12:57</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Sabado 08/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Domingo 09/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Lunes 10/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Martes 11/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Miercoles 12/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Jueves 13/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Viernes 14/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Sabado 15/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Domingo 16/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Lunes 17/08/2015</f7>
+		<f8>08:00</f8>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:49</f12>
+		<f13>12:02</f13>
+		<f14>12:57</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Martes 18/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:50</f12>
+		<f13>12:00</f13>
+		<f14>12:57</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Miercoles 19/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19>1,00</f19>
+		<f20/>
+		<f21/>
+		<f22>Dia NO trabajado</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Jueves 20/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10>13:00</f10>
+		<f11>16:16</f11>
+		<f12/>
+		<f13/>
+		<f14>12:58</f14>
+		<f15>16:16</f15>
+		<f16/>
+		<f17>  0:01</f17>
+		<f18/>
+		<f19>0,50</f19>
+		<f20>  3:15</f20>
+		<f21/>
+		<f22>Dia NO trabajado</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1>04/09/2015</f1>
+		<f2>Página 2</f2>
+		<f3>Desde 03/08/2015 hasta 31/08/2015</f3>
+		<f4>Empresa : Ronava Obrero</f4>
+		<f5>Dept. : Empaque</f5>
+		<f6>3625129    - RENGIFO, ROSALIA</f6>
+		<f7>Viernes 21/08/2015</f7>
+		<f8>08:00</f8>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:16</f11>
+		<f12>07:57</f12>
+		<f13>12:01</f13>
+		<f14>12:57</f14>
+		<f15>16:16</f15>
+		<f16/>
+		<f17>  0:01</f17>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Sabado 22/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Domingo 23/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Lunes 24/08/2015</f7>
+		<f8>08:00</f8>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:57</f12>
+		<f13>12:00</f13>
+		<f14>12:57</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Martes 25/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:52</f12>
+		<f13>12:01</f13>
+		<f14>12:55</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Miercoles 26/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:53</f12>
+		<f13>12:00</f13>
+		<f14>12:55</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Jueves 27/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:55</f12>
+		<f13>12:01</f13>
+		<f14>12:56</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Viernes 28/08/2015</f7>
+		<f8/>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>08:59</f12>
+		<f13>11:59</f13>
+		<f14>12:58</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18>  0:59</f18>
+		<f19/>
+		<f20>  6:16</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38>08:59</f38>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Sabado 29/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Domingo 30/08/2015</f7>
+		<f8/>
+		<f9/>
+		<f10/>
+		<f11/>
+		<f12/>
+		<f13/>
+		<f14/>
+		<f15/>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20/>
+		<f21/>
+		<f22>LIBRE</f22>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37/>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41/>
+		<f42/>
+		<f43/>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47/>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59/>
+		<f60/>
+	</datos_frx2xml>
+	<datos_frx2xml>
+		<f1/>
+		<f2/>
+		<f3/>
+		<f4/>
+		<f5/>
+		<f6/>
+		<f7>Lunes 31/08/2015</f7>
+		<f8>08:00</f8>
+		<f9>12:00</f9>
+		<f10>13:00</f10>
+		<f11>16:15</f11>
+		<f12>07:54</f12>
+		<f13>12:00</f13>
+		<f14>12:56</f14>
+		<f15>16:15</f15>
+		<f16/>
+		<f17/>
+		<f18/>
+		<f19/>
+		<f20>  7:15</f20>
+		<f21/>
+		<f22/>
+		<f23/>
+		<f24/>
+		<f25/>
+		<f26/>
+		<f27/>
+		<f28/>
+		<f29/>
+		<f30/>
+		<f31/>
+		<f32/>
+		<f33/>
+		<f34/>
+		<f35/>
+		<f36/>
+		<f37>08:00 am 04:15 pm</f37>
+		<f38/>
+		<f39/>
+		<f40/>
+		<f41>  0:02</f41>
+		<f42>  0:59</f42>
+		<f43>100:31</f43>
+		<f44/>
+		<f45/>
+		<f46/>
+		<f47>2,00</f47>
+		<f48/>
+		<f49/>
+		<f50/>
+		<f51/>
+		<f52/>
+		<f53/>
+		<f54/>
+		<f55/>
+		<f56/>
+		<f57/>
+		<f58/>
+		<f59>RENGIFO, ROSALIA</f59>
+		<f60>27,00</f60>
+	</datos_frx2xml>
+</VFPData>
