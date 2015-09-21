@@ -8,7 +8,8 @@ from openpyxl.styles import Border, Alignment, Side
 from openpyxl.styles import borders
 from openpyxl.cell import get_column_letter
 from openpyxl.chart import BarChart, Reference
-from openpyxl.writer.dump_worksheet import WriteOnlyCell
+# from openpyxl.writer.dump_worksheet import WriteOnlyCell
+from openpyxl.writer.write_only import WriteOnlyCell
 from openpyxl.styles import Style, Font
 
 
@@ -16,15 +17,17 @@ def create_formula(inicio, fin, fila):
     return '=SUM('+get_column_letter(inicio)+str(fila)+':'+get_column_letter(fin)+str(fila)+')'
 
 
-def fill_cell(working_sheet, value):
-    cell = WriteOnlyCell(working_sheet, value=value)
-    cell.style = Style(font=Font(name='Calibri', size=11),
-                       border=Border(left=Side(border_style=borders.BORDER_THIN,color='FF000000'),
-                       right=Side(border_style=borders.BORDER_THIN,color='FF000000'),
-                       top=Side(border_style=borders.BORDER_THIN, color='FF000000'),
-                       bottom=Side(border_style=borders.BORDER_THIN,color='FF000000')))
-    cell.alignment = Alignment(horizontal='center', vertical='center')
-
+def fill_cell(working_sheet, value, negrita=False):
+    try:
+        cell = WriteOnlyCell(working_sheet, value=value)
+        cell.style = Style(font=Font(name='Calibri', size=11, bold=negrita),
+                           border=Border(left=Side(border_style=borders.BORDER_THIN,color='FF000000'),
+                           right=Side(border_style=borders.BORDER_THIN,color='FF000000'),
+                           top=Side(border_style=borders.BORDER_THIN, color='FF000000'),
+                           bottom=Side(border_style=borders.BORDER_THIN,color='FF000000')))
+        cell.alignment = Alignment(horizontal='center', vertical='center')
+    except:
+        pass
     return cell
 
 
@@ -83,7 +86,7 @@ def transform(file):
 
                 if fecha is not None:
                     col.append('Fecha Emision: ')
-                    col.append(fill_cell(ws, fecha))
+                    col.append(fill_cell(ws, fecha, True))
 
 
                 # Tipo de personal
@@ -105,20 +108,20 @@ def transform(file):
                 col = []
 
                 # Agregamos nombre y ID
-                col.append(fill_cell(ws, 'ID'))
-                col.append(fill_cell(ws, 'Nombre'))
+                col.append(fill_cell(ws, 'ID', True))
+                col.append(fill_cell(ws, 'Nombre', True))
 
                 # Agregamos las fechas
                 for fecha in fechas:
                     nueva = f.find(fecha).text
                     if nueva is not None:
-                        col.append(fill_cell(ws, nueva))
+                        col.append(fill_cell(ws, nueva, True))
                     else:
                         control[0] += 1
                     control[1] += 1
 
-                col.append(fill_cell(ws, 'Total'))
-                col.append(fill_cell(ws, 'Total Sistema'))
+                col.append(fill_cell(ws, 'Total', True))
+                col.append(fill_cell(ws, 'Total Sistema', True))
 
 
                 ws.append(col)
