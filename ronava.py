@@ -31,7 +31,22 @@ def fill_cell(working_sheet, value, negrita=False):
     return cell
 
 
-def transform(file):
+def create_graph(working_sheet, n_operario, n_dias):
+    data = Reference(working_sheet, min_col=(n_dias+3), min_row=2, max_row=n_operario, max_col=(n_dias+3))
+    cats = Reference(working_sheet, min_col=1, min_row=3, max_row=n_operario)
+    chart2 = BarChart()
+    chart2.type = "col"
+    chart2.style = 12
+    chart2.grouping = "stacked"
+    chart2.title = 'Inasistencias por operario en Agosto'
+    chart2.y_axis.title = 'Inasistencias'
+    chart2.x_axis.title = 'Operario ID'
+    chart2.add_data(data, titles_from_data=True)
+    chart2.set_categories(cats)
+    working_sheet.add_chart(chart2, anchor=get_column_letter(6+n_dias)+str(2))
+
+
+def transform(file, simple):
     wb = Workbook()
     ws = wb.get_sheet_by_name('Sheet')
     wb.remove_sheet(ws)
@@ -136,6 +151,9 @@ def transform(file):
             nombre = f.find('f37').text
             col.append(fill_cell(ws, nombre))
 
+            # Constante de numero de columnas
+            n_dias = control[1] - control[0]
+
             # Agregamos inasistencias y cambiamos formato
             for inasistencia in inasistencias:
                 lista = f.find(inasistencia).text
@@ -148,33 +166,22 @@ def transform(file):
                     pass
                 finally:
                     control[2] += 1
-                    if control[1] - control[0] >= control[2]:
+                    if n_dias >= control[2]:
                         col.append(fill_cell(ws, lista))
 
-            col.append(fill_cell(ws, create_formula(3, control[1]-control[0]+2, control[3])))
+            # Agregamos la formula para la columna desde 3 hasta n_dias+2
+            col.append(fill_cell(ws, create_formula(3, n_dias+2, control[3])))
 
             # Agregamos el total
             total = f.find('f53').text
             col.append(fill_cell(ws, int(total)))
 
-
             ws.append(col)
 
         # Guardamos el excel
+        create_graph(ws, control[3], n_dias)
 
-        data = Reference(ws, min_col=32, min_row=2, max_row=38, max_col=32)
-        cats = Reference(ws, min_col=1, min_row=3, max_row=38)
-        chart2 = BarChart()
-        chart2.type = "col"
-        chart2.style = 12
-        chart2.grouping = "stacked"
-        chart2.title = 'Inasistencias por operario en Agosto'
-        chart2.y_axis.title = 'Inasistencias'
-        chart2.x_axis.title = 'Operario ID'
-        chart2.add_data(data, titles_from_data=True)
-        chart2.set_categories(cats)
-        ws.add_chart(chart2, anchor="AH2")
-        wb.save("ronava.xlsx")
+        wb.save(simple[:-4]+'.xlsx')
 
 
 yes = True
@@ -199,7 +206,7 @@ while yes:
     e.msgbox("Iniciar transformacion")
 
     for file in archivos:
-        transform((directorio+"%s"+file) % '\\\\')
+        transform((directorio+"%s"+file) % '\\\\', file)
 
     msg = "Do you want to continue?"
     title = "Please Confirm"
