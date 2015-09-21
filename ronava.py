@@ -75,8 +75,6 @@ def transform(file, simple):
         wb.save('datos_frx.xlsx')
     else:
         # Por Grupo
-        dias = 1
-        not_dias = 0
 
         # arreglo de fechas
         fechas = ['f'+str(i) for i in list(range(4, 19))]+['f'+str(i) for i in list(range(20, 36))]
@@ -102,7 +100,6 @@ def transform(file, simple):
                 if fecha is not None:
                     col.append('Fecha Emision: ')
                     col.append(fill_cell(ws, fecha, True))
-
 
                 # Tipo de personal
                 personal = f.find('f2').text
@@ -184,14 +181,24 @@ def transform(file, simple):
         wb.save(simple[:-4]+'.xlsx')
 
 
+def salida(opcion):
+    if opcion is not None:
+        pass
+    else:
+        e.msgbox("Cerrando aplicacion")
+        sys.exit(0)
+
 yes = True
 
 while yes:
-    e.msgbox("Transformacion de archivos xml"+"\n"+"\tVersion 1.0.0"+"\n", image='images\\LogoRonava.png')
+    mensaje = e.msgbox("Transformacion de archivos xml"+"\n"+"\tVersion 1.0.0"+"\n", image='images\\LogoRonava.png')
+    salida(mensaje)
 
     directorio = e.diropenbox(title = "\t\tEscoger directorio", msg = "\n"+"\tSeleccione el directorio con los archivos csv")
+    salida(directorio)
 
     opciones = next(os.walk(directorio))[2]
+    salida(opciones)
 
     # Seleccionamos solo las opciones .csv
 
@@ -202,14 +209,22 @@ while yes:
             xml.append(file)
 
     archivos = e.multchoicebox(msg='Seleccione los archivos a transformar', title='Seleccion de archivos', choices=xml)
+    salida(archivos)
 
-    e.msgbox("Iniciar transformacion")
+    salida(e.msgbox("Iniciar transformacion"))
 
     for file in archivos:
-        transform((directorio+"%s"+file) % '\\\\', file)
+        try:
+            transform((directorio+"%s"+file) % '\\\\', file)
+        except IOError:
+            msg = "El archivo "+file+" esta abierto en Excel."+"\n"+"Cierrelo para poder transformarlo"
+            title = "Error transformando"
 
-    msg = "Do you want to continue?"
-    title = "Please Confirm"
+            opcion = e.ccbox(msg, title)
+            salida(opcion)
+
+    msg = "Reiniciar proceso?"
+    title = "Por favor seleccione una opcion"
     if e.ccbox(msg, title):     # show a Continue/Cancel dialog
         pass  # user chose Continue
     else:
