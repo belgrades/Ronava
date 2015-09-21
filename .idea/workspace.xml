@@ -22,7 +22,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Ronava$bar.coverage" NAME="bar Coverage Results" MODIFIED="1442795368710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ronava$excel.coverage" NAME="excel Coverage Results" MODIFIED="1441519710748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Ronava$ronava.coverage" NAME="ronava Coverage Results" MODIFIED="1442826519042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Ronava$ronava.coverage" NAME="ronava Coverage Results" MODIFIED="1442833923278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ronava$create_excel.coverage" NAME="create_excel Coverage Results" MODIFIED="1441439326480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ronava$parser.coverage" NAME="parser Coverage Results" MODIFIED="1442387240250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Ronava$prueba.coverage" NAME="prueba Coverage Results" MODIFIED="1442820946842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -70,11 +70,9 @@
       <file leaf-file-name="ronava.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ronava.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.958904">
-              <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-5.0068493">
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -663,7 +661,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442824911826</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Robustez del GUI. Mejorando interaccion con usuario y respuesta a excepciones.">
+      <created>1442826624383</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1442826624383</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -713,7 +717,8 @@
     <MESSAGE value="Versión 1.1" />
     <MESSAGE value="Agregando formato a las filas del excel" />
     <MESSAGE value="Mejorando formato de grafico" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mejorando formato de grafico" />
+    <MESSAGE value="Robustez del GUI. Mejorando interaccion con usuario y respuesta a excepciones." />
+    <option name="LAST_COMMIT_MESSAGE" value="Robustez del GUI. Mejorando interaccion con usuario y respuesta a excepciones." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -745,9 +750,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -802,9 +805,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1089,11 +1090,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ronava.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.958904">
-          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-5.0068493">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

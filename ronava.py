@@ -8,7 +8,6 @@ from openpyxl.styles import Border, Alignment, Side
 from openpyxl.styles import borders
 from openpyxl.cell import get_column_letter
 from openpyxl.chart import BarChart, Reference
-# from openpyxl.writer.dump_worksheet import WriteOnlyCell
 from openpyxl.writer.write_only import WriteOnlyCell
 from openpyxl.styles import Style, Font
 
@@ -47,10 +46,16 @@ def create_graph(working_sheet, n_operario, n_dias):
 
 
 def transform(file, simple):
+    # Parse del xml
+    tree = ET.parse(file)
+    root = tree.getroot()
+    tipo = root[0][0][0][0][0].attrib.get('name')
+
+
     wb = Workbook()
     ws = wb.get_sheet_by_name('Sheet')
     wb.remove_sheet(ws)
-    ws = wb.create_sheet(title="Prueba")
+
     # ws.column_dimensions.group('A', 'D', hidden=True)
     '''
     for ws_column in range(1,10):
@@ -59,22 +64,108 @@ def transform(file, simple):
         col_letter = get_column_letter(ws_column)
         ws.column_dimensions[col_letter].bestFit = True
     '''
-    tree = ET.parse(file)
-    root = tree.getroot()
-    tipo = root[0][0][0][0][0].attrib.get('name')
-
     if tipo == "datos_frx2xml":
-        all = ['f'+str(i) for i in range(1, 61)]
+        ws = wb.create_sheet(title="Personal")
         # Por persona
-        ws.append(all)
-        for fila in root.iter('datos_frx2xml'):
+
+        first = True
+
+        for f in root.iter('datos_frx2xml'):
+            if first:
+                first = False
+                to_fila = []
+                fecha = f.find('f1').text
+
+                if fecha is not None:
+                    to_fila.append(fill_cell(ws, "Fecha Emision: ", True))
+                    to_fila.append(fill_cell(ws, fecha))
+
+                periodo = f.find('f3').text
+
+                if periodo is not None:
+                    to_fila.append(fill_cell(ws, "Periodo: ", True))
+                    to_fila.append(fill_cell(ws, periodo))
+
+                tipo = f.find('f4').text
+
+                if tipo is not None:
+                    tipo = tipo.split(':')
+                    to_fila.append(fill_cell(ws, tipo[1]))
+
+                departamento = f.find('f5').text
+
+                if departamento is not None:
+                    departamento = departamento.split(':')
+                    to_fila.append(fill_cell(ws, departamento[1]))
+
+                datos = f.find('f6').text
+
+                if datos is not None:
+                    datos = datos.split('-')
+
+                    to_fila.append(fill_cell(ws, "Cedula:", True))
+                    to_fila.append(fill_cell(ws, int(datos[0])))
+
+                    to_fila.append(fill_cell(ws, "Nombre:", True))
+                    to_fila.append(fill_cell(ws, datos[1]))
+
+                ws.append(to_fila)
+
+                to_fila = []
+
+                # Formato de las filas
+                to_fila.append(fill_cell(ws, "Fecha ", True))
+                to_fila.append(fill_cell(ws, "1er Turno Entrada Calculo ", True))
+                to_fila.append(fill_cell(ws, "1er Turno Salida Calculo ", True))
+                to_fila.append(fill_cell(ws, "2do Turno Entrada Calculo ", True))
+                to_fila.append(fill_cell(ws, "2do Turno Salida Calculo ", True))
+                to_fila.append(fill_cell(ws, "1er Turno Entrada Real ", True))
+                to_fila.append(fill_cell(ws, "1er Turno Salida Real ", True))
+                to_fila.append(fill_cell(ws, "2do Turno Entrada Real ", True))
+                to_fila.append(fill_cell(ws, "2do Turno Salida Real ", True))
+                to_fila.append(fill_cell(ws, "Horas Trabajadas", True))
+                to_fila.append(fill_cell(ws, "Deduccion", True))
+                to_fila.append(fill_cell(ws, "No trabajo", True))
+                to_fila.append(fill_cell(ws, "Observacion", True))
+
+                ws.append(to_fila)
+
             to_fila = []
-            for f in all:
-                to_fila.append(fila.find(f).text)
+            to_fila.append(fill_cell(ws, f.find('f7').text))
+
+            libre = f.find('f22').text
+
+            if libre is not "LIBRE":
+                # Anado lo basico
+                to_fila.append(fill_cell(ws, "8:00"))
+                to_fila.append(fill_cell(ws, "12:00"))
+                to_fila.append(fill_cell(ws, "13:00"))
+                to_fila.append(fill_cell(ws, "16:15"))
+
+                # Horas normales
+                to_fila.append(fill_cell(ws, f.find('f12').text))
+                to_fila.append(fill_cell(ws, f.find('f13').text))
+                to_fila.append(fill_cell(ws, f.find('f14').text))
+                to_fila.append(fill_cell(ws, f.find('f15').text))
+
+                # Total de horas trabajadas
+                to_fila.append(fill_cell(ws, f.find('f20').text))
+
+                # Deduccion
+                to_fila.append(fill_cell(ws, f.find('f18').text))
+
+                # No Trabajo
+                to_fila.append(fill_cell(ws, f.find('f19').text))
+
+            # Observacion
+            to_fila.append(fill_cell(ws, f.find('f22').text))
+
             ws.append(to_fila)
-        wb.save('datos_frx.xlsx')
+
+        wb.save(simple[:-4]+'.xlsx')
     else:
         # Por Grupo
+        ws = wb.create_sheet(title="Grupal")
 
         # arreglo de fechas
         fechas = ['f'+str(i) for i in list(range(4, 19))]+['f'+str(i) for i in list(range(20, 36))]
