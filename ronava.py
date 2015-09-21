@@ -47,7 +47,7 @@ def create_graph(working_sheet, n_operario, n_dias):
     working_sheet.add_chart(chart2, anchor=get_column_letter(6+n_dias)+str(2))
 
 
-def transform(file, simple):
+def transform(file, simple, directorio):
     # Parse del xml
     tree = ET.parse(file)
     root = tree.getroot()
@@ -163,8 +163,6 @@ def transform(file, simple):
             to_fila.append(fill_cell(ws, f.find('f22').text))
 
             ws.append(to_fila)
-
-        wb.save(simple[:-4]+'.xlsx')
     else:
         # Por Grupo
         ws = wb.create_sheet(title="Grupal")
@@ -271,7 +269,7 @@ def transform(file, simple):
         # Guardamos el excel
         create_graph(ws, control[3], n_dias)
 
-        wb.save(simple[:-4]+'.xlsx')
+    wb.save((directorio+"%s"+(simple[:-4]+'.xlsx')) % '\\\\')
 
 
 def salida(opcion):
@@ -308,7 +306,7 @@ while yes:
 
     for file in archivos:
         try:
-            transform((directorio+"%s"+file) % '\\\\', file)
+            transform((directorio+"%s"+file) % '\\\\', file, directorio)
         except IOError:
             msg = "El archivo "+file+" esta abierto en Excel."+"\n"+"Cierrelo para poder transformarlo"
             title = "Error transformando"
