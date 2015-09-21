@@ -1,7 +1,7 @@
 import os
 import sys
 import xml.etree.ElementTree as ET
-
+import warnings
 import easygui as e
 from openpyxl import Workbook
 from openpyxl.styles import Border, Alignment, Side
@@ -10,6 +10,8 @@ from openpyxl.cell import get_column_letter
 from openpyxl.chart import BarChart, Reference
 from openpyxl.writer.write_only import WriteOnlyCell
 from openpyxl.styles import Style, Font
+
+warnings.filterwarnings("ignore", category=UserWarning)
 
 
 def create_formula(inicio, fin, fila):

@@ -10,6 +10,6 @@ setup(
     }],
     data_files=Mydata_files,
     options={"py2exe": {
-                "includes": ["easygui", "os", "sys", "openpyxl"]
+                "includes": ["easygui", "os", "sys", "openpyxl", "warnings"]
              }}
     )
