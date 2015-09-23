@@ -7,17 +7,34 @@ from openpyxl import Workbook
 from openpyxl.styles import Border, Alignment, Side
 from openpyxl.styles import borders
 from openpyxl.cell import get_column_letter
-from openpyxl.chart import BarChart, Reference
+from openpyxl.chart import BarChart, Reference, Series
 from openpyxl.writer.write_only import WriteOnlyCell
 from openpyxl.styles import Style, Font
 from openpyxl import load_workbook
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
+calendario = dict()
+calendario['08/01'] = 'libre'
+calendario['08/02'] = 'libre'
+calendario['08/08'] = 'libre'
+calendario['08/09'] = 'libre'
+calendario['08/10'] = 'libre'
+calendario['08/11'] = 'libre'
+calendario['08/12'] = 'libre'
+calendario['08/13'] = 'libre'
+calendario['08/14'] = 'libre'
+calendario['08/15'] = 'libre'
+calendario['08/16'] = 'libre'
+calendario['08/22'] = 'libre'
+calendario['08/23'] = 'libre'
+calendario['08/29'] = 'libre'
+calendario['08/30'] = 'libre'
 
-def create_formula(inicio, fin, fila):
+
+def create_formula(col_ini, col_fin, row_ini, row_fin, days):
     # TODO modify name to be consistent
-    return '=SUM('+get_column_letter(inicio)+str(fila)+':'+get_column_letter(fin)+str(fila)+')'
+    return '='+str(days)+'-SUM('+get_column_letter(col_ini)+str(row_ini)+':'+get_column_letter(col_fin)+str(row_fin)+')'
 
 
 def fill_cell(working_sheet, value, negrita=False):
@@ -35,22 +52,52 @@ def fill_cell(working_sheet, value, negrita=False):
     return cell
 
 
-def asistencia_mensual(writingSheet, dataSheet, n_operario, n_dias, id):
+def ronava_bar_chart(writingSheet, dataSheet, params):
     # TODO add dictionary in parameters to avoid overlapping
-    data = Reference(dataSheet, min_col=(n_dias+3), min_row=2, max_row=n_operario, max_col=(n_dias+3))
-    cats = Reference(dataSheet, min_col=id, min_row=3, max_row=n_operario)
-    chart2 = BarChart()
-    chart2.type = "col"
-    chart2.style = 12
-    chart2.grouping = "stacked"
-    chart2.title = 'Inasistencias por operario en Agosto'
-    chart2.y_axis.title = 'Inasistencias'
-    chart2.x_axis.title = 'Operario ID'
-    chart2.add_data(data, titles_from_data=True)
-    chart2.set_categories(cats)
-    chart2.height = 15
-    #working_sheet.add_chart(chart2, anchor=get_column_letter(6+n_dias)+str(2))
-    writingSheet.add_chart(chart2, 'D4')
+    if params["use"] == "bars":
+        data = Reference(dataSheet,
+                         min_col=params['data_min_col'],
+                         min_row=params['data_min_row'],
+                         max_row=params['data_max_row'],
+                         max_col=params['data_max_col'])
+        cats = Reference(dataSheet,
+                         min_col=params['cats_min_col'],
+                         min_row=params['cats_min_row'],
+                         max_row=params['cats_max_row'],
+                         max_col=params['cats_max_col'])
+        chart = BarChart()
+        chart.type = params['type']
+        chart.style = 12
+        # chart.grouping = "stacked"
+        chart.title = params['title']
+        chart.y_axis.title = params['y_axis']
+        chart.x_axis.title = params['x_axis']
+        chart.add_data(data, titles_from_data=True)
+        chart.set_categories(cats)
+        chart.height = params['heigth']
+        chart.width = params['width']
+        writingSheet.add_chart(chart, 'D2')
+    else:
+        c1 = BarChart()
+        v1 = Reference(dataSheet,
+                       min_col=params['data_min_col'],
+                       min_row=params['data_min_row'],
+                       max_col=params['data_max_col'])
+
+        cats = Reference(dataSheet,
+                        min_col=params['cats_min_col'],
+                        min_row=params['cats_min_row'],
+                        max_col=params['cats_max_col'])
+        c1.series = [Series(v1, title_from_data=True)]
+        c1.style = 12
+        c1.set_categories(cats)
+        c1.x_axis.title = params['x_axis']
+        c1.y_axis.title = params['y_axis']
+        c1.height = params['heigth']
+        c1.width = params['width']
+        c1.title = params['title']
+        writingSheet.add_chart(c1, "D4")
+
 
 
 def transform(file, simple, directorio):
@@ -58,7 +105,8 @@ def transform(file, simple, directorio):
     # TODO change size of charts
     # TODO add more charts
     # TODO change non assistance to assistance
-
+    # TODO change control to dictionary
+    global calendario
     # Parse del xml
     tree = ET.parse(file)
     root = tree.getroot()
@@ -167,9 +215,6 @@ def transform(file, simple, directorio):
             to_fila.append(fill_cell(ws, f.find('f22').text))
 
             ws.append(to_fila)
-
-            for ws_column in range(1,10):
-                ws.column_dimensions.group('A', 'AE', hidden=True)
     else:
         # Por Grupo
         ws = wb.create_sheet(title="Grupal")
@@ -222,11 +267,14 @@ def transform(file, simple, directorio):
                 col.append(fill_cell(ws, 'Nombre', True))
 
                 # Agregamos las fechas
+                actualDates = []
                 for fecha in fechas:
                     nueva = f.find(fecha).text
                     if nueva is not None:
                         nueva = nueva.split('\n')
-                        col.append(fill_cell(ws, nueva[1]+nueva[0], True))
+                        both = nueva[0].split('/')
+                        actualDates.append(both[1]+nueva[1]+'/'+both[0])
+                        col.append(fill_cell(ws, both[1]+nueva[1]+'/'+both[0], True))
                     else:
                         control[0] += 1
                     control[1] += 1
@@ -264,7 +312,7 @@ def transform(file, simple, directorio):
                         col.append(fill_cell(ws, lista))
 
             # Agregamos la formula para la columna desde 3 hasta n_dias+2
-            col.append(fill_cell(ws, create_formula(3, n_dias+2, control[3])))
+            col.append(fill_cell(ws, create_formula(3, n_dias+2, control[3], control[3], 16)))
 
             # Agregamos el total
             total = f.find('f53').text
@@ -272,16 +320,90 @@ def transform(file, simple, directorio):
 
             ws.append(col)
 
-            ws.column_dimensions.group('A', 'AE', hidden=True)
+        col = []
+
+        col.append(fill_cell(ws, ''))
+        col.append(fill_cell(ws, 'Total Dia', True))
+
+        for idx in range(3, n_dias+3):
+            try:
+                if calendario[actualDates[idx-3]] is 'libre':
+                    col.append(fill_cell(ws, int(0)))
+            except KeyError:
+                    col.append(fill_cell(ws, create_formula(idx, idx, 3, control[3], control[3]-2)))
+        ws.append(col)
+
+        ws.column_dimensions.group('A', 'AE', hidden=True)
+
+        params = dict()
+        params['use'] = 'bars'
+
+        params['data_min_col'] = n_dias+3
+        params['data_max_col'] = n_dias+3
+        params['data_min_row'] = 2
+        params['data_max_row'] = control[3]
+
+        params['cats_min_col'] = 1
+        params['cats_max_col'] = 1
+        params['cats_min_row'] = 3
+        params['cats_max_row'] = control[3]
+
+        params['type'] = 'col'
+        params['title'] = 'Asistencia por ID'
+        params['x_axis'] = 'Operario ID'
+        params['y_axis'] = 'Asistencias'
+        params['heigth'] = 15
+        params['width'] = 30
 
         # Asistencia Mensual por ID
-        mensualID = wb.create_sheet(title="Asistencia mensual por ID")
-        asistencia_mensual(mensualID, ws, control[3], n_dias, 1)
+        mensualID = wb.create_sheet(title="Asistencia por ID")
+        ronava_bar_chart(mensualID, ws, params)
 
         # Asistencia Mensual por Nombre
+        params = dict()
+        params['use'] = 'bars'
+        params['data_min_col'] = n_dias+3
+        params['data_max_col'] = n_dias+3
+        params['data_min_row'] = 2
+        params['data_max_row'] = control[3]
 
-        mensualNombre = wb.create_sheet(title="Asistencia mensual por Nombre")
-        asistencia_mensual(mensualNombre, ws, control[3], n_dias, 2)
+        params['cats_min_col'] = 2
+        params['cats_max_col'] = 2
+        params['cats_min_row'] = 3
+        params['cats_max_row'] = control[3]
+
+        params['type'] = 'bar'
+        params['title'] = 'Asistencia por Nombre'
+        params['x_axis'] = 'Nombre Operario'
+        params['y_axis'] = 'Asistencias'
+        params['heigth'] = 15
+        params['width'] = 30
+
+        mensualNombre = wb.create_sheet(title="Asistencia por Nombre")
+        ronava_bar_chart(mensualNombre, ws, params)
+
+        # Asistencia por dia
+        params = dict()
+        params['use'] = 'nobars'
+        params['data_min_col'] = 2
+        params['data_max_col'] = n_dias + 2
+        params['data_min_row'] = 39
+        params['data_max_row'] = 39
+
+        params['cats_min_col'] = 3
+        params['cats_max_col'] = n_dias + 2
+        params['cats_min_row'] = 2
+        params['cats_max_row'] = 2
+
+        params['type'] = 'col'
+        params['title'] = 'Asistencia por dia'
+        params['x_axis'] = 'Dia'
+        params['y_axis'] = 'Asistencia'
+        params['heigth'] = 15
+        params['width'] = 40
+
+        mensualDia = wb.create_sheet(title="Asistencia por dia")
+        ronava_bar_chart(mensualDia, ws, params)
 
     wb.save((directorio+"%s"+(simple[:-4]+'.xlsx')) % '\\\\')
 
