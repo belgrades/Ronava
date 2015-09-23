@@ -10,15 +10,18 @@ from openpyxl.cell import get_column_letter
 from openpyxl.chart import BarChart, Reference
 from openpyxl.writer.write_only import WriteOnlyCell
 from openpyxl.styles import Style, Font
+from openpyxl import load_workbook
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
 
 def create_formula(inicio, fin, fila):
+    # TODO modify name to be consistent
     return '=SUM('+get_column_letter(inicio)+str(fila)+':'+get_column_letter(fin)+str(fila)+')'
 
 
 def fill_cell(working_sheet, value, negrita=False):
+    # TODO add colors depending on the day (labor or not)
     try:
         cell = WriteOnlyCell(working_sheet, value=value)
         cell.style = Style(font=Font(name='Calibri', size=11, bold=negrita),
@@ -32,9 +35,10 @@ def fill_cell(working_sheet, value, negrita=False):
     return cell
 
 
-def create_graph(working_sheet, n_operario, n_dias):
-    data = Reference(working_sheet, min_col=(n_dias+3), min_row=2, max_row=n_operario, max_col=(n_dias+3))
-    cats = Reference(working_sheet, min_col=1, min_row=3, max_row=n_operario)
+def asistencia_mensual(writingSheet, dataSheet, n_operario, n_dias, id):
+    # TODO add dictionary in parameters to avoid overlapping
+    data = Reference(dataSheet, min_col=(n_dias+3), min_row=2, max_row=n_operario, max_col=(n_dias+3))
+    cats = Reference(dataSheet, min_col=id, min_row=3, max_row=n_operario)
     chart2 = BarChart()
     chart2.type = "col"
     chart2.style = 12
@@ -44,28 +48,28 @@ def create_graph(working_sheet, n_operario, n_dias):
     chart2.x_axis.title = 'Operario ID'
     chart2.add_data(data, titles_from_data=True)
     chart2.set_categories(cats)
-    working_sheet.add_chart(chart2, anchor=get_column_letter(6+n_dias)+str(2))
+    chart2.height = 15
+    #working_sheet.add_chart(chart2, anchor=get_column_letter(6+n_dias)+str(2))
+    writingSheet.add_chart(chart2, 'D4')
 
 
 def transform(file, simple, directorio):
+    # TODO add more comments to remember
+    # TODO change size of charts
+    # TODO add more charts
+    # TODO change non assistance to assistance
+
     # Parse del xml
     tree = ET.parse(file)
     root = tree.getroot()
     tipo = root[0][0][0][0][0].attrib.get('name')
-
 
     wb = Workbook()
     ws = wb.get_sheet_by_name('Sheet')
     wb.remove_sheet(ws)
 
     # ws.column_dimensions.group('A', 'D', hidden=True)
-    '''
-    for ws_column in range(1,10):
-        ws.column_dimensions.
-        ws.column_dimensions.group('A', 'I', hidden=True)
-        col_letter = get_column_letter(ws_column)
-        ws.column_dimensions[col_letter].bestFit = True
-    '''
+
     if tipo == "datos_frx2xml":
         ws = wb.create_sheet(title="Personal")
         # Por persona
@@ -163,6 +167,9 @@ def transform(file, simple, directorio):
             to_fila.append(fill_cell(ws, f.find('f22').text))
 
             ws.append(to_fila)
+
+            for ws_column in range(1,10):
+                ws.column_dimensions.group('A', 'AE', hidden=True)
     else:
         # Por Grupo
         ws = wb.create_sheet(title="Grupal")
@@ -218,15 +225,14 @@ def transform(file, simple, directorio):
                 for fecha in fechas:
                     nueva = f.find(fecha).text
                     if nueva is not None:
-                        col.append(fill_cell(ws, nueva, True))
+                        nueva = nueva.split('\n')
+                        col.append(fill_cell(ws, nueva[1]+nueva[0], True))
                     else:
                         control[0] += 1
                     control[1] += 1
 
                 col.append(fill_cell(ws, 'Total', True))
                 col.append(fill_cell(ws, 'Total Sistema', True))
-
-
                 ws.append(col)
 
             col = []
@@ -266,8 +272,16 @@ def transform(file, simple, directorio):
 
             ws.append(col)
 
-        # Guardamos el excel
-        create_graph(ws, control[3], n_dias)
+            ws.column_dimensions.group('A', 'AE', hidden=True)
+
+        # Asistencia Mensual por ID
+        mensualID = wb.create_sheet(title="Asistencia mensual por ID")
+        asistencia_mensual(mensualID, ws, control[3], n_dias, 1)
+
+        # Asistencia Mensual por Nombre
+
+        mensualNombre = wb.create_sheet(title="Asistencia mensual por Nombre")
+        asistencia_mensual(mensualNombre, ws, control[3], n_dias, 2)
 
     wb.save((directorio+"%s"+(simple[:-4]+'.xlsx')) % '\\\\')
 
@@ -282,6 +296,7 @@ def salida(opcion):
 yes = True
 
 while yes:
+    # TODO change reboot options to spanish
     mensaje = e.msgbox("Transformacion de archivos xml"+"\n"+"\tVersion 1.0.0"+"\n", image='images\\LogoRonava.png')
     salida(mensaje)
 

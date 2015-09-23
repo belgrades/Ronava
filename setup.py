@@ -6,7 +6,7 @@ Mydata_files = [('images', ['C:\\Users\\Crema\\PycharmProjects\\Ronava\\LogoRona
 setup(
     windows=[{
         "script": "ronava.py",
-         "icon_resources": [(1, "ronava.ico")]
+         "icon_resources": [(0, "ronava.ico")]
     }],
     data_files=Mydata_files,
     options={"py2exe": {
