@@ -7,30 +7,16 @@ from openpyxl import Workbook
 from openpyxl.styles import Border, Alignment, Side
 from openpyxl.styles import borders
 from openpyxl.cell import get_column_letter
-from openpyxl.chart import BarChart, Reference, Series
+from openpyxl.chart import BarChart, Reference, Series, LineChart
 from openpyxl.writer.write_only import WriteOnlyCell
 from openpyxl.styles import Style, Font
 from openpyxl import load_workbook
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
-calendario = dict()
-calendario['08/01'] = 'libre'
-calendario['08/02'] = 'libre'
-calendario['08/08'] = 'libre'
-calendario['08/09'] = 'libre'
-calendario['08/10'] = 'libre'
-calendario['08/11'] = 'libre'
-calendario['08/12'] = 'libre'
-calendario['08/13'] = 'libre'
-calendario['08/14'] = 'libre'
-calendario['08/15'] = 'libre'
-calendario['08/16'] = 'libre'
-calendario['08/22'] = 'libre'
-calendario['08/23'] = 'libre'
-calendario['08/29'] = 'libre'
-calendario['08/30'] = 'libre'
+# TODO cambiar ejes en grafico ID
 
+calendario = dict()
 
 def create_formula(col_ini, col_fin, row_ini, row_fin, days):
     # TODO modify name to be consistent
@@ -77,7 +63,7 @@ def ronava_bar_chart(writingSheet, dataSheet, params):
         chart.height = params['heigth']
         chart.width = params['width']
         writingSheet.add_chart(chart, 'D2')
-    else:
+    elif params["use"] == 'single':
         c1 = BarChart()
         v1 = Reference(dataSheet,
                        min_col=params['data_min_col'],
@@ -97,7 +83,41 @@ def ronava_bar_chart(writingSheet, dataSheet, params):
         c1.width = params['width']
         c1.title = params['title']
         writingSheet.add_chart(c1, "D4")
+    else:
+        c1 = BarChart()
+        v1 = Reference(dataSheet,
+                       min_col=params['data_min_col'],
+                       min_row=params['data_min_row'],
+                       max_col=params['data_max_col'])
 
+        cats = Reference(dataSheet,
+                        min_col=params['cats_min_col'],
+                        min_row=params['cats_min_row'],
+                        max_col=params['cats_max_col'])
+        c1.series = [Series(v1, title_from_data=True)]
+        c1.y_axis.majorGridlines = None
+        c1.set_categories(cats)
+        c1.x_axis.title = params['x_axis']
+        c1.y_axis.title = params['y_axis']
+        c1.height = params['heigth']
+        c1.width = params['width']
+        c1.title = params['title']
+        c1.style = 12
+        # Create a second chart
+        c2 = LineChart()
+        v2 = Reference(dataSheet,
+                       min_col=params['data_min_col'],
+                       min_row=params['data_min_row']+1,
+                       max_col=params['data_max_col'])
+        c2.series = [Series(v2, title_from_data=True)]
+        c2.y_axis.axId = 20
+        c2.y_axis.title = "Porcentaje Produccion"
+        # Assign the y-axis of the second chart to the third axis of the first chart
+        c1.z_axis = c2.y_axis
+        c1.y_axis.crosses = "max"
+        c1 += c2
+
+        writingSheet.add_chart(c1, "D4")
 
 
 def transform(file, simple, directorio):
@@ -106,6 +126,7 @@ def transform(file, simple, directorio):
     # TODO add more charts
     # TODO change non assistance to assistance
     # TODO change control to dictionary
+    # TODO modify columns of hidden
     global calendario
     # Parse del xml
     tree = ET.parse(file)
@@ -123,6 +144,7 @@ def transform(file, simple, directorio):
         # Por persona
 
         first = True
+        month = ''
 
         for f in root.iter('datos_frx2xml'):
             if first:
@@ -219,6 +241,9 @@ def transform(file, simple, directorio):
         # Por Grupo
         ws = wb.create_sheet(title="Grupal")
 
+        # Mes de estudio
+        month = ''
+
         # arreglo de fechas
         fechas = ['f'+str(i) for i in list(range(4, 19))]+['f'+str(i) for i in list(range(20, 36))]
 
@@ -274,6 +299,7 @@ def transform(file, simple, directorio):
                         nueva = nueva.split('\n')
                         both = nueva[0].split('/')
                         actualDates.append(both[1]+nueva[1]+'/'+both[0])
+                        month = both[1]+nueva[1]
                         col.append(fill_cell(ws, both[1]+nueva[1]+'/'+both[0], True))
                     else:
                         control[0] += 1
@@ -281,6 +307,7 @@ def transform(file, simple, directorio):
 
                 col.append(fill_cell(ws, 'Total', True))
                 col.append(fill_cell(ws, 'Total Sistema', True))
+                col.append(fill_cell(ws, 'Falta Maxima', True))
                 ws.append(col)
 
             col = []
@@ -312,13 +339,25 @@ def transform(file, simple, directorio):
                         col.append(fill_cell(ws, lista))
 
             # Agregamos la formula para la columna desde 3 hasta n_dias+2
-            col.append(fill_cell(ws, create_formula(3, n_dias+2, control[3], control[3], 16)))
+            col.append(fill_cell(ws, create_formula(3, n_dias+2, control[3], control[3], get_column_letter(n_dias+5)
+                                                    +str(3))))
 
             # Agregamos el total
             total = f.find('f53').text
             col.append(fill_cell(ws, int(total)))
-
             ws.append(col)
+
+
+        ws[get_column_letter(n_dias+5)+str(3)] = '=MAX('+get_column_letter(n_dias+4)+str(3)+':'+\
+                                                 get_column_letter(n_dias+4)+str(control[3])+')'
+
+        ws[get_column_letter(n_dias+5)+str(3)].style = Style(font=Font(name='Calibri', size=11, bold=False),
+                           border=Border(left=Side(border_style=borders.BORDER_THIN,color='FF000000'),
+                           right=Side(border_style=borders.BORDER_THIN,color='FF000000'),
+                           top=Side(border_style=borders.BORDER_THIN, color='FF000000'),
+                           bottom=Side(border_style=borders.BORDER_THIN,color='FF000000')))
+
+        ws[get_column_letter(n_dias+5)+str(3)].alignment = Alignment(horizontal='center', vertical='center')
 
         col = []
 
@@ -330,10 +369,25 @@ def transform(file, simple, directorio):
                 if calendario[actualDates[idx-3]] is 'libre':
                     col.append(fill_cell(ws, int(0)))
             except KeyError:
-                    col.append(fill_cell(ws, create_formula(idx, idx, 3, control[3], control[3]-2)))
+                col.append(fill_cell(ws, create_formula(idx, idx, 3, control[3], control[3]-2)))
+            except IndexError:
+                col.append(fill_cell(ws, create_formula(idx, idx, 3, control[3], control[3]-2)))
         ws.append(col)
 
-        ws.column_dimensions.group('A', 'AE', hidden=True)
+        col = []
+
+        '''
+        col.append(fill_cell(ws, ''))
+        col.append(fill_cell(ws, 'Produccion', True))
+
+        produccion = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 97.14, 0, 21.95,46.45, 0, 0, 70.12, 77.20, 81.92, 82.93, 75.09, 54.33, 0, 54.33]
+
+        for pdx in produccion:
+            col.append(fill_cell(ws,pdx ))
+
+        ws.append(col)
+        '''
+        ws.column_dimensions.group(get_column_letter(1), get_column_letter(n_dias+2), hidden=True)
 
         params = dict()
         params['use'] = 'bars'
@@ -348,7 +402,7 @@ def transform(file, simple, directorio):
         params['cats_min_row'] = 3
         params['cats_max_row'] = control[3]
 
-        params['type'] = 'col'
+        params['type'] = 'bar'
         params['title'] = 'Asistencia por ID'
         params['x_axis'] = 'Operario ID'
         params['y_axis'] = 'Asistencias'
@@ -384,11 +438,11 @@ def transform(file, simple, directorio):
 
         # Asistencia por dia
         params = dict()
-        params['use'] = 'nobars'
+        params['use'] = 'single'
         params['data_min_col'] = 2
         params['data_max_col'] = n_dias + 2
-        params['data_min_row'] = 39
-        params['data_max_row'] = 39
+        params['data_min_row'] = control[3]+1
+        params['data_max_row'] = control[3]+1
 
         params['cats_min_col'] = 3
         params['cats_max_col'] = n_dias + 2
@@ -404,6 +458,32 @@ def transform(file, simple, directorio):
 
         mensualDia = wb.create_sheet(title="Asistencia por dia")
         ronava_bar_chart(mensualDia, ws, params)
+
+        '''
+        # Asistencia por dia
+        params = dict()
+        params['use'] = 'prueba'
+        params['data_min_col'] = 2
+        params['data_max_col'] = n_dias + 2
+        params['data_min_row'] = control[3]+1
+        params['data_max_row'] = control[3]+1
+
+        params['cats_min_col'] = 3
+        params['cats_max_col'] = n_dias + 2
+        params['cats_min_row'] = 2
+        params['cats_max_row'] = 2
+
+        params['type'] = 'col'
+        params['title'] = 'Produccion vs Asistencia'
+        params['x_axis'] = 'Dia'
+        params['y_axis'] = 'Asistencia'
+        params['heigth'] = 15
+        params['width'] = 40
+
+        mensualDiaProduccion = wb.create_sheet(title="Produccion vs Asistencia")
+        ronava_bar_chart(mensualDiaProduccion, ws, params)
+
+        '''
 
     wb.save((directorio+"%s"+(simple[:-4]+'.xlsx')) % '\\\\')
 
@@ -438,6 +518,23 @@ while yes:
 
     archivos = e.multchoicebox(msg='Seleccione los archivos a transformar', title='Seleccion de archivos', choices=xml)
     salida(archivos)
+
+    xlsx = list()
+
+    for file in opciones:
+        if file[-5:] == ".xlsx":
+            xlsx.append(file)
+
+    paraDict = e.choicebox(msg='Seleccionar libres', title='Seleccione el archivo de libres', choices=xlsx)
+    salida(paraDict)
+
+    wb = load_workbook((directorio+"%s"+paraDict) % '\\\\')
+    ws = wb.active
+
+    actual = 1
+    while ws['A'+str(actual)].value is not None:
+        calendario[ws['A'+str(actual)].value] = 'libre'
+        actual += 1
 
     salida(e.msgbox("Iniciar transformacion"))
 
