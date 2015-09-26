@@ -18,3 +18,18 @@ ronava/
     ├── setup.py
     ├── run.bat
 ```
+
+## Usage
+
+Transform XML Schema files into .xlsx using openpyxl. Adding useful graphics into .xlsx according to user demand.
+
+## Creator
+
+**Fernando Crema**
+
+* <https://twitter.com/FernandoCremaG>
+* <https://github.com/Belgrades>
+
+## Copyright and license
+
+Code and documentation copyright ![C.A. Productos Ronava - RIF: J-00030157-3](http://www.ronava.com/).
