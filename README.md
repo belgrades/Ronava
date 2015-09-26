@@ -33,4 +33,5 @@ Transform XML Schema files into .xlsx using openpyxl. Adding useful graphics int
 ## Copyright and license
 
 Code and documentation copyright [C.A. Productos Ronava - RIF: J-00030157-3](http://www.ronava.com/).
+
 ![Laboratorios Ronava](http://www.ronava.com/images/LogoRonava.png)
